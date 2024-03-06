@@ -1,25 +1,22 @@
 
 import template from "../views/welcome.html";
 
-  // TODO #class: use the ES6 class keyword
-  /* class WelcomeComponent constructor  */
- export function WelcomeComponent() {
-    // TODO #extends: call super(template)
 
+  /* class WelcomeComponent constructor  */
+ export class WelcomeComponent {
+     constructor() {
+    // TODO #extends: call super(template)
      this.template = template;
   }
-
   // put component in global scope, to be runnable right from the HTML.
 
-  // TODO #class: turn function into a method of WelcomeComponent
   /* method WelcomeComponent.init */
-  WelcomeComponent.prototype.init = function init() {
-    var form = document.querySelector("form.form-signin");
-
-    form.addEventListener(
-      "submit",
+     init() {
+         var form = document.querySelector("form.form-signin");
+        form.addEventListener(
+         "submit",
       // TODO #arrow-function: use arrow function instead.
-      function (event) {
+         function (event) {
         event.preventDefault();
         if (form.checkValidity() === false) {
           event.stopPropagation();
@@ -28,7 +25,7 @@ import template from "../views/welcome.html";
           var name = event.srcElement.querySelector("#nickname").value;
           var size = parseInt(event.srcElement.querySelector("#size").value);
 
-          _startGame(name, size);
+          this._startGame(name, size);
         }
       }.bind(this),
       false
@@ -36,12 +33,11 @@ import template from "../views/welcome.html";
 
     return this;
   };
+     _startGame(name, size) {
 
-  // TODO #class: turn function into a method of WelcomeComponent
-  function _startGame(name, size) {
-
-    var gamePage = "./#game";
-    // TODO #template-literals:  use template literals (backquotes)
-    window.location = gamePage + "?name=" + name + "&size=" + size;
-  }
+         var gamePage = "./#game";
+         // TODO #template-literals:  use template literals (backquotes)
+         window.location = gamePage + "?name=" + name + "&size=" + size;
+     }
+ }
 
