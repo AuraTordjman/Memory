@@ -42,24 +42,22 @@ export class GameComponent extends Component {
 
           // create cards out of the config
           this._cards = [];
-          // TODO #functional-programming: use Array.map() instead.
+
           for (let i in this._config.ids) {
             this._cards[i] = new CardComponent(this._config.ids[i]);
           }
+          this._cards = this._config.ids.map(config=> new CardComponent(config))
 
-          // TODO #functional-programming: use Array.forEach() instead.
-
-          for (let i in this._cards) {
-            let card = this._cards[i];
-            this._boardElement.appendChild(card.getElement());
-              card.getElement().addEventListener(
+             this._cards.forEach((card) => {
+                 this._boardElement.appendChild(card.getElement());
+                 card.getElement().addEventListener(
                   "click",
-                  function () {
+                  () => {
                       this._flipCard(card);
-                  }.bind(this)
-
+                  }
               );
           }
+          );
           this.start();
         }
     );
