@@ -1,7 +1,7 @@
-import template from "../views/game.html";
-import { Component } from "./component";
-import { parseUrl } from "./utils";
-
+import template from "./game.component.html";
+import { Component } from "../../scripts/component";
+import { parseUrl } from "../../scripts/utils";
+import "./game.component.css";
 const CARD_TEMPLATE = ""
     .concat('<main class="card-cmp">')
     .concat('  <div class="card-wrapper">')
