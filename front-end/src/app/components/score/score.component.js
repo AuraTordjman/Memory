@@ -2,9 +2,7 @@ import template from "./score.component.html";
 import { Component } from "../../scripts/component";
 import { parseUrl } from "../../scripts/utils";
 import "./score.component.css";
-
-  /* class ScoreComponent constructor */
-  export class ScoreComponent extends Component {
+export class ScoreComponent extends Component {
     constructor() {
       super(template)
         let params = parseUrl();
@@ -19,6 +17,3 @@ import "./score.component.css";
         document.getElementById("time").innerText = this.time;
     }
   }
-
-
-  // put component in global scope, to be runnable right from the HTML.

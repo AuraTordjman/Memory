@@ -1,19 +1,13 @@
-
 import template from "./welcome.component.html";
 import {Component} from "../../scripts/component";
 import "./welcome.component.css";
-
-  /* class WelcomeComponent constructor  */
- export class WelcomeComponent  extends Component {
+export class WelcomeComponent  extends Component {
      constructor() {
          super(template)
 
      this.template = template;
   }
-  // put component in global scope, to be runnable right from the HTML.
-
-  /* method WelcomeComponent.init */
-     init() {
+   init() {
          let form = document.querySelector("form.form-signin");
          form.addEventListener(
          "submit",

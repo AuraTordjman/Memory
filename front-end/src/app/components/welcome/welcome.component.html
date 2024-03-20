@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
-
-    <!-- link to welcome controller -->
-  </head>
-
-  <body>
-
-
-    <section class="overflow-auto flex-grow-1 d-flex flex-column">
+ <section class="overflow-auto flex-grow-1 d-flex flex-column">
       <div class="container-fluid flex-grow-1">
-        <!-- TODO #shell: keep this element -->
         <main class="welcome-cmp">
           <div class="container">
             <form id="start-form" class="form-signin card" novalidate>
@@ -76,12 +63,9 @@
           </div>
         </main>
       </div>
-
-
     </section>
     <script>
       // execute the controller
       var wc = new WelcomeComponent().init();
     </script>
-  </body>
-</html>
+

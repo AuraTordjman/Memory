@@ -1,8 +1,7 @@
-
-
 import { Component } from "../../../scripts/component";
 import template from "./card.component.html";
 import "./card.component.css";
+
 import back from "./cards/back.png";
 import card0 from "./cards/card-0.png";
 import card1 from "./cards/card-1.png";
@@ -29,8 +28,6 @@ let CARDS_IMAGE = [
     card9,
 ];
 
-
-/* class CardComponent constructor */
 export class CardComponent extends Component {
     constructor(id) {
         super(template)
@@ -49,16 +46,16 @@ export class CardComponent extends Component {
             CARDS_IMAGE[this._id + 1];
         this._imageElt.querySelector("img.back-face").src = CARDS_IMAGE[0];
     }
-    /* method CardComponent.getElement */
+
     getElement(){
         return this._elt;
     }
-    /* method CardComponent.flip */
+
     flip() {
         this._imageElt.classList.toggle("flip");
         this._flipped = !this._flipped;
     }
-    /* method CardComponent.equals */
+
     equals(card) {
         return card._id === this._id;
     };

@@ -19,9 +19,6 @@ body > main {
 }
 
 /* global style */
-.bg-primary {
-  background-color: #cb2468 !important;
-}
 
 .btn-outline-primary {
   border-color: #cb2468;

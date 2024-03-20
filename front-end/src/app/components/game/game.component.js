@@ -10,8 +10,6 @@ const environment = {
     },
 };
 
-
-/* class GameComponent constructor */
 export class GameComponent extends Component {
   constructor() {
     super(template)
@@ -25,14 +23,9 @@ export class GameComponent extends Component {
   this._matchedPairs = 0;
   }
 
-  /* method GameComponent.init */
   async init() {
-    // fetch the cards configuration from the server
-
           this._config = await this.fetchConfig();
           this._boardElement = document.querySelector(".cards");
-
-          // create cards out of the config
           this._cards = [];
 
           for (let i in this._config.ids) {
@@ -54,7 +47,6 @@ export class GameComponent extends Component {
 
   };
 
-  /* method GameComponent.start */
   start() {
     this._startTime = Date.now();
       let seconds = 0;
@@ -69,7 +61,6 @@ export class GameComponent extends Component {
 
         }, 1000);
   };
-  /* method GameComponent.fetchConfig */
     async fetchConfig() {
         const response = await fetch(
             `${environment.api.host}/board?size=${this._size}`
@@ -77,9 +68,6 @@ export class GameComponent extends Component {
         return response.json();
     };
 
-
-
-  /* method GameComponent.goToScore */
   goToScore() {
       let timeElapsedInSeconds = Math.floor(
           (Date.now() - this._startTime) / 1000
@@ -95,8 +83,6 @@ export class GameComponent extends Component {
         }, 750);
   };
 
-
-  /* method GameComponent._flipCard */
   _flipCard(card) {
     if (this._busy) {
       return;
@@ -147,5 +133,3 @@ export class GameComponent extends Component {
     }
   };
 }
-
-// put component in global scope, to be runnable right from the HTML.
